@@ -1,38 +1,50 @@
-<tareas>
-  <tarea codigo="EDA100">
-    <descripcion>asd fas dsad</descripcion>
-    <hestimadas>5</hestimadas>
-    <tipotarea>Examen</tipotarea>
-    <explotacion>False</explotacion>
-  </tarea>
-  <tarea codigo="EDA20-Ej1">
-    <descripcion>Ejercicio sobre listas ligadasss</descripcion>
-    <hestimadas>3</hestimadas>
-    <tipotarea>Ejercicio</tipotarea>
-    <explotacion>True</explotacion>
-  </tarea>
-  <tarea codigo="EDA20-Ex1">
-    <descripcion>examen</descripcion>
-    <hestimadas>12</hestimadas>
-    <tipotarea>Examen</tipotarea>
-    <explotacion>True</explotacion>
-  </tarea>
-  <tarea codigo="EDA20-Ex2">
-    <descripcion>examen</descripcion>
-    <hestimadas>3</hestimadas>
-    <tipotarea>Examen</tipotarea>
-    <explotacion>True</explotacion>
-  </tarea>
-  <tarea codigo="Eda22">
-    <descripcion>Ass</descripcion>
-    <hestimadas>14</hestimadas>
-    <tipotarea>Laboratorio</tipotarea>
-    <explotacion>True</explotacion>
-  </tarea>
-  <tarea codigo="EDA99">
-    <descripcion>Prueba 1 EDA</descripcion>
-    <hestimadas>2</hestimadas>
-    <tipotarea>Examen</tipotarea>
-    <explotacion>False</explotacion>
-  </tarea>
-</tareas>
+<Tareas>
+  <Tarea codigo="HAS20-Lab1">
+    <descripcion>Lab componentes</descripcion>
+    <hEstimadas>6</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS20-Lab10">
+    <descripcion>Sobre django</descripcion>
+    <hEstimadas>10</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS20-Lab2">
+    <descripcion>Web Forms</descripcion>
+    <hEstimadas>12</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS20-Test1">
+    <descripcion>Test 1 de la asignatura</descripcion>
+    <hEstimadas>3</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>examen</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS21-LAB4">
+    <descripcion>Lab sobre ADO.NET</descripcion>
+    <hEstimadas>20</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS22-Lab4">
+    <descripcion>Laboratorio sobre XML</descripcion>
+    <hEstimadas>12</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS22-Test1">
+    <descripcion>Test 1 de la asignatura</descripcion>
+    <hEstimadas>1</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>Examen</tipoTarea>
+  </Tarea>
+  <Tarea codigo="HAS99">
+    <descripcion>asdf asd fasd </descripcion>
+    <hEstimadas>3</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </Tarea>
+</Tareas>

@@ -161,7 +161,7 @@ namespace Dal
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();
-                dt.TableName = "TareasGenericas";
+                dt.TableName = "Tarea";
                 adapter.Fill(dt);
                 DataSet ds = new DataSet();
                 ds.Tables.Add(dt);

@@ -45,30 +45,10 @@ namespace RegistroUsuarios.Views
             try
             {
                 XmlDocument xml = new XmlDocument();
-                XmlElement tareas = xml.CreateElement("tareas");
-                xml.AppendChild(tareas);
-                foreach (DataRow dr in this.ds.Tables["TareasGenericas"].Rows)
-                {
-                    XmlElement tarea = xml.CreateElement("tarea");
-                    tarea.SetAttribute("codigo", dr["codigo"].ToString());
-                    tareas.AppendChild(tarea);
-
-                    XmlElement descripcion = xml.CreateElement("descripcion");
-                    descripcion.InnerText = dr["descripcion"].ToString();
-                    tarea.AppendChild(descripcion);
-
-                    XmlElement hEstimadas = xml.CreateElement("hestimadas");
-                    hEstimadas.InnerText = dr["hestimadas"].ToString();
-                    tarea.AppendChild(hEstimadas);
-
-                    XmlElement tipoTarea = xml.CreateElement("tipotarea");
-                    tipoTarea.InnerText = dr["tipotarea"].ToString();
-                    tarea.AppendChild(tipoTarea);
-
-                    XmlElement explotacion = xml.CreateElement("explotacion");
-                    explotacion.InnerText = dr["explotacion"].ToString();
-                    tarea.AppendChild(explotacion);
-                }
+                this.ds.DataSetName = "Tareas";
+                this.ds.Tables[0].Columns["codigo"].ColumnMapping = MappingType.Attribute;
+                string strXml = this.ds.GetXml();
+                xml.LoadXml(strXml);
 
                 string path = Server.MapPath(string.Format("~/App_Data/{0}.xml", this.listaAsignaturas.SelectedValue));
                 xml.Save(path);
