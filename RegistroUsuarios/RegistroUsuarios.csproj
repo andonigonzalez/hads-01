@@ -67,11 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\VerTablaTareas.xsl" />
     <Content Include="Views\Alumno.aspx" />
     <Content Include="Views\Bienvenido.aspx" />
     <Content Include="Views\CambiarPassword.aspx" />
     <Content Include="Views\Confirmar.aspx" />
+    <Content Include="Views\ExportarTareas.aspx" />
     <Content Include="Views\GestionarTareas.aspx" />
+    <Content Include="Views\ImportarTareasXMLDocument.aspx" />
     <Content Include="Views\Inicio.aspx" />
     <Content Include="Views\InsertarTarea.aspx" />
     <Content Include="Views\InstanciarTarea.aspx" />
@@ -110,12 +115,26 @@
     <Compile Include="Views\Confirmar.aspx.designer.cs">
       <DependentUpon>Confirmar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ExportarTareas.aspx.cs">
+      <DependentUpon>ExportarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ExportarTareas.aspx.designer.cs">
+      <DependentUpon>ExportarTareas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\GestionarTareas.aspx.cs">
       <DependentUpon>GestionarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\GestionarTareas.aspx.designer.cs">
       <DependentUpon>GestionarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportarTareasXMLDocument.aspx.cs">
+      <DependentUpon>ImportarTareasXMLDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ImportarTareasXMLDocument.aspx.designer.cs">
+      <DependentUpon>ImportarTareasXMLDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

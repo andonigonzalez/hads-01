@@ -15,9 +15,9 @@
             <br />
             <asp:HyperLink NavigateUrl="#" runat="server" Text="Grupos" />
             <br />
-            <asp:HyperLink NavigateUrl="#" runat="server" Text="Importar v. XML Documnet" />
+            <asp:HyperLink NavigateUrl="ImportarTareasXMLDocument.aspx" runat="server" Text="Importar v. XML Document" />
             <br />
-            <asp:HyperLink NavigateUrl="#" runat="server" Text="Exportar" />
+            <asp:HyperLink NavigateUrl="ExportarTareas.aspx" runat="server" Text="Exportar" />
             <br />
             <asp:HyperLink NavigateUrl="#" runat="server" Text="Importar v. DataSet" />
         </div>

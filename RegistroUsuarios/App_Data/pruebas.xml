@@ -1,0 +1,38 @@
+<tareas>
+  <tarea codigo="EDA100">
+    <descripcion>asd fas dsad</descripcion>
+    <hestimadas>5</hestimadas>
+    <tipotarea>Examen</tipotarea>
+    <explotacion>False</explotacion>
+  </tarea>
+  <tarea codigo="EDA20-Ej1">
+    <descripcion>Ejercicio sobre listas ligadasss</descripcion>
+    <hestimadas>3</hestimadas>
+    <tipotarea>Ejercicio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="EDA20-Ex1">
+    <descripcion>examen</descripcion>
+    <hestimadas>12</hestimadas>
+    <tipotarea>Examen</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="EDA20-Ex2">
+    <descripcion>examen</descripcion>
+    <hestimadas>3</hestimadas>
+    <tipotarea>Examen</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="Eda22">
+    <descripcion>Ass</descripcion>
+    <hestimadas>14</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="EDA99">
+    <descripcion>Prueba 1 EDA</descripcion>
+    <hestimadas>2</hestimadas>
+    <tipotarea>Examen</tipotarea>
+    <explotacion>False</explotacion>
+  </tarea>
+</tareas>

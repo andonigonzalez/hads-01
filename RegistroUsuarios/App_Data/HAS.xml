@@ -1,0 +1,50 @@
+<tareas>
+  <tarea codigo="HAS20-Lab1">
+    <descripcion>Lab componentes</descripcion>
+    <hestimadas>6</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="HAS20-Lab10">
+    <descripcion>Sobre django</descripcion>
+    <hestimadas>10</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="HAS20-Lab2">
+    <descripcion>Web Forms</descripcion>
+    <hestimadas>12</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="HAS20-Test1">
+    <descripcion>Test 1 de la asignatura</descripcion>
+    <hestimadas>3</hestimadas>
+    <tipotarea>examen</tipotarea>
+    <explotacion>False</explotacion>
+  </tarea>
+  <tarea codigo="HAS21-LAB4">
+    <descripcion>Lab sobre ADO.NET</descripcion>
+    <hestimadas>20</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="HAS22-Lab4">
+    <descripcion>Laboratorio sobre XML</descripcion>
+    <hestimadas>12</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>True</explotacion>
+  </tarea>
+  <tarea codigo="HAS22-Test1">
+    <descripcion>Test 1 de la asignatura</descripcion>
+    <hestimadas>1</hestimadas>
+    <tipotarea>Examen</tipotarea>
+    <explotacion>False</explotacion>
+  </tarea>
+  <tarea codigo="HAS99">
+    <descripcion>asdf asd fasd </descripcion>
+    <hestimadas>3</hestimadas>
+    <tipotarea>Laboratorio</tipotarea>
+    <explotacion>False</explotacion>
+  </tarea>
+</tareas>

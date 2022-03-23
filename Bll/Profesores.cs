@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Bll
 {
@@ -26,6 +27,30 @@ namespace Bll
         public ResCrearTarea CrearTarea(TareaGenerica tarea)
         {
             return this.profesoresDal.CrearTarea(tarea);
+        }
+
+        public ResCrearTarea ImportarTareas(string path, string codAsig)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load(path);
+            XmlReader reader = new XmlNodeReader(xml);
+
+            DataSet ds = new DataSet();
+            ds.ReadXml(reader);
+
+            ds.Tables[0].Columns.Add("codAsig");
+
+            foreach(DataRow dr in ds.Tables[0].Rows)
+            {
+                dr["codAsig"] = codAsig;
+            }
+
+            return this.profesoresDal.ImportarTareas(ds);
+        }
+
+        public DataSet GetTareasByAsignatura(string codAsig)
+        {
+            return this.profesoresDal.GetTareasByAsignatura(codAsig);
         }
     }
 }

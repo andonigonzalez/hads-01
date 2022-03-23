@@ -31,7 +31,7 @@ namespace Dal
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
             finally
             {
@@ -92,9 +92,9 @@ namespace Dal
                 if (res > 0)
                     return ResCrearTarea.Ok;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                return ResCrearTarea.Error;
             }
             finally
             {
@@ -102,6 +102,83 @@ namespace Dal
             }
 
             return ResCrearTarea.Error;
+        }
+
+        public ResCrearTarea ImportarTareas(DataSet tareas)
+        {
+            try
+            {
+                Conectar();
+
+
+                StringBuilder sql = new StringBuilder("SELECT codigo, descripcion, codAsig, hEstimadas, explotacion, tipoTarea FROM TareaGenerica WHERE codigo in(");
+                foreach(DataRow dr in tareas.Tables[0].Rows)
+                {
+                    sql.Append("'"+dr["codigo"]+"',");
+                }
+                string finalSql = sql.ToString().Substring(0, sql.Length - 1)+")";
+                SqlCommand cmdSelect = new SqlCommand(finalSql, connection);
+                cmdSelect.CommandType = System.Data.CommandType.Text;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmdSelect;
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(adapter);
+                adapter.InsertCommand = cmdBuilder.GetInsertCommand();
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                    return ResCrearTarea.TareaExistente;
+
+                int res = adapter.Update(tareas.Tables[0]);
+
+                if (res > 0)
+                    return ResCrearTarea.Ok;
+            }
+            catch (Exception)
+            {
+                return ResCrearTarea.Error;
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return ResCrearTarea.Error;
+        }
+
+        public DataSet GetTareasByAsignatura(string codAsig)
+        {
+            try
+            {
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand("SELECT codigo, descripcion, hEstimadas, explotacion, tipoTarea FROM TareaGenerica WHERE codAsig = @codAsig", connection);
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("codAsig", System.Data.SqlDbType.NVarChar).Value = codAsig;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                dt.TableName = "TareasGenericas";
+                adapter.Fill(dt);
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dt);
+
+                if (dt.Rows.Count > 0)
+                    return ds;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return null;
         }
     }
 }
