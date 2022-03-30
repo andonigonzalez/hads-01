@@ -59,7 +59,9 @@ namespace RegistroUsuarios.Views
 
         protected void btnInstanciar_Click(object sender, EventArgs e)
         {
-            if(int.Parse(this.txtHorasReales.Text) < 1)
+            int num;
+            bool parseo = int.TryParse(this.txtHorasReales.Text, out num);
+            if (this.txtHorasReales.Text == string.Empty || !parseo || num < 1)
             {
                 this.txtMensaje.Text = "Las horas reales deben ser mayor que cero";
                 return;

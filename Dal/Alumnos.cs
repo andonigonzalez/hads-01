@@ -150,7 +150,7 @@ namespace Dal
                     return new TareaGenerica
                     {
                         codigo = reader.GetString(0),
-                        hEstimadas = reader.GetInt32(1)
+                        hEstimadas = reader.GetInt32(3)
                     };
                 }
             }
