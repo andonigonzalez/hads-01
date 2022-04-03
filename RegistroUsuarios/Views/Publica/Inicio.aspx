@@ -19,9 +19,9 @@
         <asp:Button Text="Login" runat="server" ID="btnLogin" OnClick="LoginBtn_Click" />
         <br />
 
-        <a href="Registro.aspx">Registro</a>
+        <asp:HyperLink NavigateUrl="~/Views/Publica/Registro.aspx" runat="server" Text="Registro" />
         <br />
-        <a href="CambiarPassword.aspx">Cambiar password</a>
+        <asp:HyperLink NavigateUrl="~/Views/Publica/CambiarPassword.aspx" runat="server" Text="Cambiar password" />
         <br />
 
         <asp:Label Text="Usuario o contraseña incorrectos" runat="server" ID="lblLoginIncorrecto" Visible="False" />

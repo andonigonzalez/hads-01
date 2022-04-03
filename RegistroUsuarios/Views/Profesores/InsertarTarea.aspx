@@ -38,7 +38,7 @@
             <br />
             <asp:Button Text="Añadir Tarea" runat="server" ID="btnAddTarea" OnClick="btnAddTarea_Click" UseSubmitBehavior="False" />
             <br />
-            <asp:HyperLink NavigateUrl="GestionarTareas.aspx" runat="server" Text="Ver Tareas" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/GestionarTareas.aspx" runat="server" Text="Ver Tareas" />
             <br />
             <asp:Label Text="" runat="server" ID="txtMensaje" />
         </div>

@@ -22,8 +22,8 @@ namespace RegistroUsuarios.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Utilities.Utilities.CheckSession(Session))
-                Response.Redirect("Inicio.aspx");
+            /*if (!Utilities.Utilities.CheckSession(Session))
+                Response.Redirect("~/Views/Publica/Inicio.aspx");*/
 
             user = (Usuario)Session["usuario"];
 
@@ -44,7 +44,7 @@ namespace RegistroUsuarios.Views
         private void RellenarDatosTarea()
         {
             if (!CheckQueryString())
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("~/Views/Publica/Inicio.aspx");
 
             TareaGenerica tarea = bllAlumnos.GetDatosEstudianteTarea(Request.QueryString["codTarea"]);
             txtTarea.Text = tarea.codigo;

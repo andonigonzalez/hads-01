@@ -33,7 +33,7 @@ namespace RegistroUsuarios.Views
         private void RedireccionInicio()
         {
             System.Threading.Thread.Sleep(3000);
-            Response.Redirect("Inicio.aspx");
+            Response.Redirect("~/Views/Publica/Inicio.aspx");
         }
     }
 }

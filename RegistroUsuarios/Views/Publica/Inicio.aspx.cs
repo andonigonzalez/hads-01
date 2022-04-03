@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -22,7 +23,7 @@ namespace RegistroUsuarios
 
             Usuarios usersBll = new Usuarios();
             Usuario user = usersBll.Login(this.txtEmail.Text, this.txtPassword.Text);
-            if (user == null)
+            if (user == null || !Utilities.Utilities.CheckPasswords(this.txtPassword.Text, user.password))
             {
                 lblLoginIncorrecto.Visible = true;
                 return;
@@ -31,7 +32,30 @@ namespace RegistroUsuarios
             Session.Add("usuario", user);
             Session.Add("email", user.email);
 
+            GenerateAuthCookie(user);
+
             Redireccion(user);
+        }
+
+        private void GenerateAuthCookie(Usuario user)
+        {
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+            1,
+            user.email,
+            DateTime.Now,
+            DateTime.Now.AddMinutes(30),
+            true,
+            user.tipo,
+            FormsAuthentication.FormsCookiePath);
+
+            string hash = FormsAuthentication.Encrypt(ticket);
+            HttpCookie cookie = new HttpCookie(
+               FormsAuthentication.FormsCookieName,
+               hash);
+
+            if (ticket.IsPersistent) cookie.Expires = ticket.Expiration;
+
+            Response.Cookies.Add(cookie);
         }
 
         private void LimpiarMensajes()
@@ -42,11 +66,9 @@ namespace RegistroUsuarios
         private void Redireccion(Usuario user)
         {
             if (user.tipo == "Alumno")
-                Response.Redirect("Alumno.aspx");
+                Response.Redirect("~/Views/Alumnos/Alumno.aspx");
             else if (user.tipo == "Profesor")
-                Response.Redirect("Profesor.aspx");
-            else
-                Response.Redirect("Bienvenido.aspx");
+                Response.Redirect("~/Views/Profesores/Profesor.aspx");
         }
     }
 }

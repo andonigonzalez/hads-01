@@ -44,7 +44,7 @@
         <asp:Label Text="La contraseña debe ser mínimo de 6 carateres" runat="server" ID="lblPassCorta" Visible="False" />
         <br />
 
-        <asp:HyperLink NavigateUrl="Inicio.aspx" runat="server" ID="linkInicio" Text="Volver al inicio" />
+        <asp:HyperLink NavigateUrl="~/Views/Publica/Inicio.aspx" runat="server" ID="linkInicio" Text="Volver al inicio" />
         <br />
     </form>
 </body>

@@ -11,13 +11,13 @@
         <div>
             <asp:HyperLink NavigateUrl="#" runat="server" Text="Asignaturas" />
             <br />
-            <asp:HyperLink NavigateUrl="GestionarTareas.aspx" runat="server" Text="Tareas" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/GestionarTareas.aspx" runat="server" Text="Tareas" />
             <br />
             <asp:HyperLink NavigateUrl="#" runat="server" Text="Grupos" />
             <br />
-            <asp:HyperLink NavigateUrl="ImportarTareasXMLDocument.aspx" runat="server" Text="Importar v. XML Document" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/ImportarTareasXMLDocument.aspx" runat="server" Text="Importar v. XML Document" />
             <br />
-            <asp:HyperLink NavigateUrl="ExportarTareas.aspx" runat="server" Text="Exportar" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/ExportarTareas.aspx" runat="server" Text="Exportar" />
             <br />
             <asp:HyperLink NavigateUrl="#" runat="server" Text="Importar v. DataSet" />
         </div>

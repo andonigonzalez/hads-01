@@ -11,7 +11,7 @@
         <asp:Label Text="Identificación incorrecta" runat="server" ID="ko" Visible="False" />
         <asp:Label Text="Identificación correcta" runat="server" ID="ok" Visible="False" />
         <br />
-        <asp:HyperLink NavigateUrl="Inicio.aspx" runat="server" ID="linkInicio" Visible="False" Text="Volver al inicio" />
+        <asp:HyperLink NavigateUrl="~/Views/Publica/Inicio.aspx" runat="server" ID="linkInicio" Visible="False" Text="Volver al inicio" />
     </form>
 </body>
 </html>

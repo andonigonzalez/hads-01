@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:HyperLink NavigateUrl="VerTareasEstudiante.aspx" runat="server" Text="Tareas Genéricas" />
+            <asp:HyperLink NavigateUrl="~/Views/Alumnos/VerTareasEstudiante.aspx" runat="server" Text="Tareas Genéricas" />
         </div>
         <div>
             <asp:Label Text="Gestión Web de Tareas-Dedicación" runat="server" />

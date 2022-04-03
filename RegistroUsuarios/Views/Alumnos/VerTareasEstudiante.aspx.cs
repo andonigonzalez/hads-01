@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -23,8 +24,8 @@ namespace RegistroUsuarios.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Utilities.Utilities.CheckSession(Session))
-                Response.Redirect("Inicio.aspx");
+            /*if (!Utilities.Utilities.CheckSession(Session))
+                Response.Redirect("~/Views/Publica/Inicio.aspx");*/
 
             user = (Usuario)Session["usuario"];
 
@@ -58,13 +59,14 @@ namespace RegistroUsuarios.Views
 
         protected void gridTareas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect("InstanciarTarea.aspx?codTarea=" + gridTareas.SelectedRow.Cells[1].Text);
+            Response.Redirect("~/Views/Alumnos/InstanciarTarea.aspx?codTarea=" + gridTareas.SelectedRow.Cells[1].Text);
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Inicio.aspx");
+            FormsAuthentication.SignOut();
+            Response.Redirect("~/Views/Publica/Inicio.aspx");
         }
     }
 }

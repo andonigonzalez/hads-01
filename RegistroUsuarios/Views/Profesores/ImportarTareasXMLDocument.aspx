@@ -28,7 +28,7 @@
             <asp:Xml ID="Xml1" runat="server"></asp:Xml>
         </div>
         <div>
-            <asp:HyperLink NavigateUrl="Profesor.aspx" runat="server" Text="Menu Profesor" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/Profesor.aspx" runat="server" Text="Menu Profesor" />
         </div>
         <div>
             <asp:Label Text="" runat="server" ID="txtMensajes" />

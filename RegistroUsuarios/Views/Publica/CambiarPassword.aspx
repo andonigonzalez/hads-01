@@ -44,7 +44,7 @@
         <asp:Label Text="Contraseña modificada correctamente" runat="server" ID="lblPassModificada" Visible="False" />
         <br />
 
-        <asp:HyperLink NavigateUrl="Inicio.aspx" runat="server" ID="linkInicio" Text="Volver al inicio" />
+        <asp:HyperLink NavigateUrl="~/Views/Publica/Inicio.aspx" runat="server" ID="linkInicio" Text="Volver al inicio" />
         <br />
 
     </form>

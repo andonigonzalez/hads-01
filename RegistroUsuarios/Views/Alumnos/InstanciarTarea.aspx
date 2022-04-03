@@ -28,7 +28,7 @@
             <br />
             <asp:Button Text="Instanciar tarea" runat="server" ID="btnInstanciar" OnClick="btnInstanciar_Click" />
             <br />
-            <asp:HyperLink NavigateUrl="VerTareasEstudiante.aspx" runat="server" Text="Página anterior" />
+            <asp:HyperLink NavigateUrl="~/Views/Alumnos/VerTareasEstudiante.aspx" runat="server" Text="Página anterior" />
             <br />
             <asp:Label Text="" runat="server" ID="txtMensaje" />
         </div>

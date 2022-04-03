@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,19 +12,20 @@ namespace RegistroUsuarios.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Utilities.Utilities.CheckSession(Session))
-                Response.Redirect("Inicio.aspx");
+            /*if (!Utilities.Utilities.CheckSession(Session))
+                Response.Redirect("~/Views/Publica/Inicio.aspx");*/
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Inicio.aspx");
+            FormsAuthentication.SignOut();
+            Response.Redirect("~/Views/Publica/Inicio.aspx");
         }
 
         protected void btnInsertarTarea_Click(object sender, EventArgs e)
         {
-            Response.Redirect("InsertarTarea.aspx");
+            Response.Redirect("~/Views/Profesores/InsertarTarea.aspx");
         }
     }
 }

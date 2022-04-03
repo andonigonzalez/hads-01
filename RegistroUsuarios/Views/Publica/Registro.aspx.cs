@@ -33,6 +33,8 @@ namespace RegistroUsuarios
             else
                 user.tipo = "Profesor";
 
+            user.password = Utilities.Utilities.HashPassword(user.password);
+
             Usuarios usersDll = new Usuarios();
             bool resultado = usersDll.Registro(user);
             if (resultado)

@@ -22,8 +22,8 @@ namespace RegistroUsuarios.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Utilities.Utilities.CheckSession(Session))
-                Response.Redirect("Inicio.aspx");
+            /*if (!Utilities.Utilities.CheckSession(Session))
+                Response.Redirect("~/Views/Publica/Inicio.aspx");*/
 
             CargarGrid();
         }

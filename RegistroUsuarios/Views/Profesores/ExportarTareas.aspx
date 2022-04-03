@@ -26,7 +26,7 @@
             <asp:GridView ID="gridTareas" runat="server"></asp:GridView>
         </div>
         <div>
-            <asp:HyperLink NavigateUrl="Profesor.aspx" runat="server" Text="Menu Profesor" />
+            <asp:HyperLink NavigateUrl="~/Views/Profesores/Profesor.aspx" runat="server" Text="Menu Profesor" />
         </div>
         <div>
             <asp:Label Text="" runat="server" ID="txtMensajes" />

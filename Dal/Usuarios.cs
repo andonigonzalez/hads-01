@@ -190,11 +190,11 @@ namespace Dal
             {
                 Conectar();
 
-                string sql = "SELECT email, nombre, apellidos, confirmado, tipo " +
+                string sql = "SELECT email, nombre, apellidos, confirmado, tipo, pass " +
                     "FROM Usuario " +
-                    "WHERE email = @email AND pass = @pass AND confirmado = 1";
+                    "WHERE email = @email AND confirmado = 1";
                 SqlCommand commandSelect = new SqlCommand();
-                commandSelect.Parameters.AddWithValue("pass", System.Data.SqlDbType.NVarChar).Value = pass;
+                //commandSelect.Parameters.AddWithValue("pass", System.Data.SqlDbType.NVarChar).Value = pass;
                 commandSelect.Parameters.AddWithValue("email", System.Data.SqlDbType.NVarChar).Value = email;
 
                 commandSelect.Connection = connection;
@@ -210,7 +210,8 @@ namespace Dal
                         nombre = reader.GetString(1),
                         apellidos = reader.GetString(2),
                         confirmado = reader.GetBoolean(3),
-                        tipo = reader.GetString(4)
+                        tipo = reader.GetString(4),
+                        password = reader.GetString(5)
                     };
                 }
             }
