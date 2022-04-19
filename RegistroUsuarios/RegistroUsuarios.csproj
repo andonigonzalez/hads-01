@@ -16,7 +16,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44315</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -73,6 +74,7 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Alumnos\Alumno.aspx" />
     <Content Include="Views\Bienvenido.aspx" />
+    <Content Include="Views\Profesores\MediaHoras.aspx" />
     <Content Include="Views\Publica\CambiarPassword.aspx" />
     <Content Include="Views\Publica\Confirmar.aspx" />
     <Content Include="Views\Profesores\ExportarTareas.aspx" />
@@ -84,6 +86,7 @@
     <Content Include="Views\Profesores\Profesor.aspx" />
     <Content Include="Views\Publica\Registro.aspx" />
     <Content Include="Views\Alumnos\VerTareasEstudiante.aspx" />
+    <Content Include="Views\Publica\UsuariosLogeados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +107,13 @@
     </Compile>
     <Compile Include="Views\Bienvenido.aspx.designer.cs">
       <DependentUpon>Bienvenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Profesores\MediaHoras.aspx.cs">
+      <DependentUpon>MediaHoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Profesores\MediaHoras.aspx.designer.cs">
+      <DependentUpon>MediaHoras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Publica\CambiarPassword.aspx.cs">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
@@ -183,6 +193,13 @@
     <Compile Include="Views\Alumnos\VerTareasEstudiante.aspx.designer.cs">
       <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Publica\UsuariosLogeados.aspx.cs">
+      <DependentUpon>UsuariosLogeados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Publica\UsuariosLogeados.aspx.designer.cs">
+      <DependentUpon>UsuariosLogeados.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -224,7 +241,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50085</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44315/</IISUrl>
+          <IISUrl>http://localhost:44315/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

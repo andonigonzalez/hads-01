@@ -47,5 +47,35 @@
         <asp:HyperLink NavigateUrl="~/Views/Publica/Inicio.aspx" runat="server" ID="linkInicio" Text="Volver al inicio" />
         <br />
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnRegistro").attr("disabled", "disabled");
+            $("#txtEmail").focusout(function () {
+                var soapRequest =
+                    '<?xml version="1.0" encoding="utf-8"?>'+
+                    '< soap:Envelope xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:soap = "http://schemas.xmlsoap.org/soap/envelope/">'+
+                        '<soap:Body>'+
+                            '<comprobar xmlns="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php/">'+
+                                '<x>'+ $("#txtEmail").val() +'</x>'+
+                            '</comprobar>'+
+                        '</soap:Body>'+
+                    '</soap:Envelope >';
+                $.ajax({
+                    type: "POST",
+                    url: "http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl",
+                    contentType: "text/xml",
+                    dataType: "xml",
+                    data: soapRequest,
+                    success: function (result) {
+                        if (result == "SI")
+                            $("#btnRegistro").removeAttr("disabled");
+                        else
+                            $("#btnRegistro").prop("disabled", "disabled");
+                    }
+                });
+            })
+        });
+    </script>
 </body>
 </html>

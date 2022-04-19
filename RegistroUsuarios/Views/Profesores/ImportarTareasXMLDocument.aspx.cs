@@ -14,12 +14,12 @@ namespace RegistroUsuarios.Views
 {
     public partial class ImportarTareasXMLDocument : System.Web.UI.Page
     {
-        Profesores bllProfesores;
+        Bll.Profesores bllProfesores;
         string pathDocument = string.Empty;
 
         public ImportarTareasXMLDocument()
         {
-            bllProfesores = new Profesores();
+            bllProfesores = new Bll.Profesores();
         }
 
         protected void Page_Load(object sender, EventArgs e)

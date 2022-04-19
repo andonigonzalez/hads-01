@@ -12,12 +12,12 @@ namespace RegistroUsuarios.Views
 {
     public partial class ExportarTareas : System.Web.UI.Page
     {
-        Profesores bllProfesores;
+        Bll.Profesores bllProfesores;
         DataSet ds;
 
         public ExportarTareas()
         {
-            bllProfesores = new Profesores();
+            bllProfesores = new Bll.Profesores();
         }
 
         protected void Page_Load(object sender, EventArgs e)

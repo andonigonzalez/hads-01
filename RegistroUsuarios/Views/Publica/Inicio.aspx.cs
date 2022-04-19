@@ -32,9 +32,33 @@ namespace RegistroUsuarios
             Session.Add("usuario", user);
             Session.Add("email", user.email);
 
+            SaveLoggedUser(user.email, user.tipo);
+
             GenerateAuthCookie(user);
 
             Redireccion(user);
+        }
+
+        private void SaveLoggedUser(string email, string rol)
+        {
+            if (rol == "Alumno")
+            {
+                List<string> alumnos = (List<string>)Application["alumnos"] ?? new List<string>();
+                if (!alumnos.Contains(email))
+                {
+                    alumnos.Add(email);
+                    Application["alumnos"] = alumnos;
+                }
+            }
+            if (rol == "Profesor")
+            {
+                List<string> profesores = (List<string>)Application["profesores"] ?? new List<string>();
+                if (!profesores.Contains(email))
+                {
+                    profesores.Add(email);
+                    Application["profesores"] = profesores;
+                }
+            }
         }
 
         private void GenerateAuthCookie(Usuario user)

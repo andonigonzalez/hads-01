@@ -18,8 +18,11 @@ namespace RegistroUsuarios.Views
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            Utilities.Utilities.RemoveLoggedUser(Application, Session);
+
             Session.Clear();
             FormsAuthentication.SignOut();
+            
             Response.Redirect("~/Views/Publica/Inicio.aspx");
         }
 

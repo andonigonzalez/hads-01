@@ -86,5 +86,14 @@ namespace RegistroUsuarios.Utilities
 
             return (differences == 0);
         }
+
+        public static void RemoveLoggedUser(HttpApplicationState app, HttpSessionState ses)
+        {
+            List<string> alumnos = (List<string>)app["alumnos"] ?? new List<string>();
+            List<string> profesores = (List<string>)app["profesores"] ?? new List<string>();
+            object email = ses["email"] ?? string.Empty;
+            alumnos.Remove(email.ToString());
+            profesores.Remove(email.ToString());
+        }
     }
 }

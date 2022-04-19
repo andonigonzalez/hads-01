@@ -16,6 +16,20 @@
             <br />
             <asp:Label Text="Alumnos" runat="server" />
         </div>
+        <div id="loggedUsers"></div>
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                $.ajax({
+                    url: "../Publica/UsuariosLogeados.aspx",
+                    success: function (result) {
+                        $("#loggedUsers").html(result);
+                    }
+                });
+            }, 5000);
+        });
+    </script>
 </body>
 </html>

@@ -12,11 +12,11 @@ namespace RegistroUsuarios.Views
 {
     public partial class InsertarTarea : System.Web.UI.Page
     {
-        Profesores bllProfesores;
+        Bll.Profesores bllProfesores;
 
         public InsertarTarea()
         {
-            bllProfesores = new Profesores();
+            bllProfesores = new Bll.Profesores();
         }
 
         protected void Page_Load(object sender, EventArgs e)

@@ -47,6 +47,8 @@ namespace RegistroUsuarios
             }
         }
 
+        
+
         protected void Application_Error(object sender, EventArgs e)
         {
 
@@ -54,7 +56,7 @@ namespace RegistroUsuarios
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+            Utilities.Utilities.RemoveLoggedUser(Application, Session);
         }
 
         protected void Application_End(object sender, EventArgs e)
